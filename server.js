@@ -7,8 +7,8 @@ const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 
 const yt_api_key = "AIzaSyDeoIH0u1e72AtfpwSKKOSy3IPp2UHzqi4";
-const prefix = '+';
-const discord_token = "NDU1NTE1NjQ5NzYzMTgwNTU0.DjKfZQ.ERxCfUWoDnwyOXc0FORQD6CAhpE";
+const prefix = '#';
+const discord_token = (process.env.BOT_TOKEN);
 client.login(discord_token);
 client.on('ready', function() {
     console.log(`i am ready ${client.user.username}`);
@@ -232,18 +232,14 @@ function isYoutube(str) {
     const embed = new Discord.RichEmbed()
      .setColor("RANDOM")
      .addField(`Zyad,aLmutairi commands:
-
 +about - shows info about the bot
 +ping - checks the bot's latency
-
   Music:
-
 +play - shows the song that is currently playing
 +play <title|URL|subcommand> - plays the provided song
 +queue [pagenum] - shows the current queue
 +تعال <title|URL|subcommand> - plays the provided song
 +skip - votes to skip the current song
-
   DJ:
 +ok <title|URL|subcommand> - plays the provided song
 +skip - skips the current song
@@ -251,7 +247,6 @@ function isYoutube(str) {
 +skipt <position> - skips to the specified song
 +stop - stops the current song and clears the queue
 +vol [0-150] - sets or shows volume
-
 For additional help,  `)
 
       message.channel.send({embed});
